@@ -24,20 +24,20 @@ RUN \
         libavahi-compat-libdnssd-dev \
         libudev-dev \
         libpam0g-dev \
-        nodejs \
-    \
+        nodejs
+    #\
     ## Install IoBroker
     #&& curl -sL https://raw.githubusercontent.com/ioBroker/ioBroker/stable-installer/installer.sh | bash - \
     #&& npm install iobroker --unsafe-perm \
     #&& npm i --production --unsafe-perm \
-    \
+    #\
     ## Clean up APT when done
     #&& apt-get autoremove \
     #&& apt-get clean \
     #&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    \
+    #\
     ## extract instalation for later intitialisation
-    && tar -czf /root/iobrokerBase.tgz * \
+    #&& tar -czf /root/iobrokerBase.tgz * \
     #&& rm -R *
 
 COPY scripts/run.sh /root/
