@@ -40,7 +40,7 @@ COPY scripts/run.sh /root/
 RUN chmod +x /root/run.sh
 
 ## extract instalation for later intitialisation
-tar -czf /root/iobrokerBase.tgz *
+RUN tar -czf /root/iobrokerBase.tgz *
 
 VOLUME /opt/iobroker/
 
