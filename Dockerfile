@@ -11,11 +11,12 @@ MAINTAINER Joscha Middendorf <joscha.middendorf@me.com>
 #RUN apk add --no-cache bash python build-base
 
 RUN mkdir -p /opt/iobroker/
-#WORKDIR /opt/iobroker/
+WORKDIR /opt/iobroker/
+ADD scripts/run.sh run.sh
+RUN chmod +x run.sh
+
 #RUN npm install iobroker --unsafe-perm
 #RUN npm i --production --unsafe-perm
-#ADD scripts/run.sh run.sh
-#RUN chmod +x run.sh
 
 VOLUME /opt/iobroker/
 
