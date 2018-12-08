@@ -14,7 +14,7 @@
 
 if [ "$(ls -A /opt/iobroker/)" ]; then
         
-        echo "Directory /opt/iobroker/ isn't empty, no instalation neded, startig IoBroker now."
+	echo "Directory /opt/iobroker/ isn't empty, no instalation neded, startig IoBroker now."
 	echo "==================================================="
 	echo
 	echo
