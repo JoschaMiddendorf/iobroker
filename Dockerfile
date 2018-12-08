@@ -31,7 +31,11 @@ RUN \
     ## Clean up APT when done
     && apt-get autoremove \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    \
+    ## Customize console
+    && echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
+    && echo "screenfetch" >> /root/.bashrc
     
 ## Install IoBroker
 #RUN \
@@ -41,10 +45,6 @@ RUN \
 #    ## Extract instalation for later intitialisation
 #    && tar -czf /root/iobrokerBase.tgz * \
 #    && rm -R *
-    
-## Customize console
-RUN echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
-    && echo "screenfetch" >> /root/.bashrc
 
 COPY scripts/run.sh /root/
 RUN chmod +x /root/run.sh
