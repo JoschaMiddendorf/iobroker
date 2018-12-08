@@ -10,4 +10,5 @@ else
 	echo "Extracted package $PACKAGE to /opt/iobroker/ to initialize the configuration directory."
 fi
 
-node /opt/iobroker/node_modules/iobroker.js-controller/controller.js
+tail -f /dev/null
+#node /opt/iobroker/node_modules/iobroker.js-controller/controller.js
