@@ -3,6 +3,9 @@
 LOGFILE=/opt/iobroker/log/iobroker.%Y-%m-%d.log
 SLEEPINTERVAL=1.0
 
+test -f "$(date +"$LOGFILE")" && OLDLINES=$(wc -l < "$(date +"$LOGFILE")") || OLDLINES=0
+NEWLINES=$OLDLINES
+FOUND=false
 function PrintNewLines {
         	NEWLINES=$(wc -l < "$(date +"$LOGFILE")")
         	(( OLDLINES <= NEWLINES )) && LINES=$(( NEWLINES - OLDLINES )) || LINES=$NEWLINES
@@ -12,7 +15,7 @@ function PrintNewLines {
 }
 
 while true; do
-		PrintNewLines											## Printing log lines in intervalls
+		PrintNewLines
 		sleep $SLEEPINTERVAL
 done
 
