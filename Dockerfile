@@ -35,14 +35,15 @@ RUN \
     && apt-get autoremove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    
-COPY scripts/run.sh /root/
-RUN chmod +x /root/run.sh
 
 ## extract instalation for later intitialisation
 RUN tar -czf /root/iobrokerBase.tgz *
 
+COPY scripts/run.sh /root/
+RUN chmod +x /root/run.sh
+
+
 VOLUME /opt/iobroker/
 
 EXPOSE 8081 8082 8083 8084
-CMD /opt/iobroker/run.sh
+CMD /root/run.sh
