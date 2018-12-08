@@ -7,6 +7,7 @@ MAINTAINER Joscha Middendorf <joscha.middendorf@me.com>
 RUN mkdir -p /opt/iobroker/
 WORKDIR /opt/iobroker/
 
+## Install Node
 RUN \
     ## update and upgrade APT
     apt-get update \
@@ -31,22 +32,22 @@ RUN \
     && apt-get autoremove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    ## Install IoBroker
-    RUN \
-    #curl -sL https://raw.githubusercontent.com/ioBroker/ioBroker/stable-installer/installer.sh | bash - \
+    
+## Install IoBroker
+RUN \
     npm install iobroker --unsafe-perm \
     && npm i --production --unsafe-perm \
     \
-    ## extract instalation for later intitialisation
+    ## Extract instalation for later intitialisation
     && tar -czf /root/iobrokerBase.tgz * \
-    #&& rm -R *
+    && rm -R * \
+    \
+    ## Customize console
+    && echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
+    && echo "screenfetch" >> /root/.bashrc
 
 COPY scripts/run.sh /root/
 RUN chmod +x /root/run.sh
-
-## Customize console
-RUN echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
-    && echo "screenfetch" >> /root/.bashrc
 
 VOLUME /opt/iobroker/
 
