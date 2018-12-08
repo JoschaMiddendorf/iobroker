@@ -1,4 +1,4 @@
-FROM FROM debian:stretch
+FROM debian:stretch
 
 # inspired by https://github.com/Locke/docker-iobroker
 
