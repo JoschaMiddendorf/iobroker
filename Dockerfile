@@ -28,13 +28,13 @@ RUN \
     \
     ## Install IoBroker
     #&& curl -sL https://raw.githubusercontent.com/ioBroker/ioBroker/stable-installer/installer.sh | bash - \
-    && npm install iobroker --unsafe-perm \
-    && npm i --production --unsafe-perm \
+    #&& npm install iobroker --unsafe-perm \
+    #&& npm i --production --unsafe-perm \
     \
     ## Clean up APT when done
-    && apt-get autoremove \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    #&& apt-get autoremove \
+    #&& apt-get clean \
+    #&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     \
     ## extract instalation for later intitialisation
     && tar -czf /root/iobrokerBase.tgz * \
