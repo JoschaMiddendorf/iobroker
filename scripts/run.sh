@@ -1,5 +1,17 @@
 #!/bin/sh
 
+##################################################################################################
+##
+##	Start and intitialization script for IoBroker
+##	Copyright (c) 2018 Joscha Middendorf
+##
+##	After mounting a volume to the container, this script extracts the content 
+##	of the previously compressed configuration directory back to a provided directory,
+##	if the directory is empty.
+##	Afrerwards it starts IoBroker and monitors it during runtime.
+##
+##################################################################################################
+
 if [ "$(ls -A /opt/iobroker/)" ]; then
         
 	echo "Directory /opt/iobroker/ isn't empty, no extraction processed!"
