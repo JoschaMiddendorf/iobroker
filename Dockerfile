@@ -15,6 +15,7 @@ RUN \
     ## Install dependencies
     && apt-get -qqy install \
         curl \
+        screenfetch \
         gnupg \
     \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
@@ -43,6 +44,9 @@ RUN \
 COPY scripts/run.sh /root/
 RUN chmod +x /root/run.sh
 
+## Customize console
+RUN echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
+    && echo "screenfetch" >> /root/.bashrc
 
 VOLUME /opt/iobroker/
 
