@@ -34,16 +34,16 @@ RUN \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 ## Install IoBroker
-RUN \
-    npm install iobroker --unsafe-perm \
-    && npm i --production --unsafe-perm \
-    \
-    ## Extract instalation for later intitialisation
-    && tar -czf /root/iobrokerBase.tgz * \
-    && rm -R * \
-    \
-    ## Customize console
-    && echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
+#RUN \
+#    npm install iobroker --unsafe-perm \
+#    && npm i --production --unsafe-perm \
+#    \
+#    ## Extract instalation for later intitialisation
+#    && tar -czf /root/iobrokerBase.tgz * \
+#    && rm -R *
+    
+## Customize console
+RUN echo "alias ll='ls -lah --color=auto'" >> /root/.bashrc \
     && echo "screenfetch" >> /root/.bashrc
 
 COPY scripts/run.sh /root/
