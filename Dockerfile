@@ -1,16 +1,16 @@
-FROM mhart/alpine-node:8
+FROM FROM debian:stretch
 
 # inspired by https://github.com/Locke/docker-iobroker
 
 MAINTAINER Joscha Middendorf <joscha.middendorf@me.com>
 
-RUN node -v 
-RUN nodejs -v 
-RUN npm -v
+#RUN node -v 
+#RUN nodejs -v 
+#RUN npm -v
 
 #RUN apk add --no-cache bash python build-base
 
-#RUN mkdir -p /opt/iobroker/
+RUN mkdir -p /opt/iobroker/
 #WORKDIR /opt/iobroker/
 #RUN npm install iobroker --unsafe-perm
 #RUN npm i --production --unsafe-perm
