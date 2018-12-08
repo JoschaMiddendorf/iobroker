@@ -1,6 +1,5 @@
+## Copyright (c) 2018 Joscha Middendorf
 FROM debian:stretch
-
-# inspired by https://github.com/Locke/docker-iobroker
 
 MAINTAINER Joscha Middendorf <joscha.middendorf@me.com>
 
