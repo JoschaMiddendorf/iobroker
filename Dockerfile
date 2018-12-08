@@ -4,7 +4,9 @@ FROM mhart/alpine-node:8
 
 MAINTAINER Joscha Middendorf <joscha.middendorf@me.com>
 
-RUN node -v && nodejs -v && npm -v
+RUN node -v 
+RUN nodejs -v 
+RUN npm -v
 
 #RUN apk add --no-cache bash python build-base
 
