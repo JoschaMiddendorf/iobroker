@@ -40,10 +40,7 @@ COPY scripts/run.sh /root/
 RUN chmod +x /root/run.sh
 
 ## extract instalation for later intitialisation
-##run tar -czf "$PACKAGE" "$2"
-
-#RUN npm install iobroker --unsafe-perm
-#RUN npm i --production --unsafe-perm
+tar -czf /root/iobrokerBase.tgz *
 
 VOLUME /opt/iobroker/
 
