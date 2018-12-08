@@ -22,9 +22,7 @@
 #	done
 #else
 	echo "NO LOGFILE!"
-	while true; do
-		
-	done
+	tail -f /dev/null
 #fi
 
 #node node_modules/iobroker.js-controller/controller.js
