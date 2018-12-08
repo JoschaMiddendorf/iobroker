@@ -25,17 +25,17 @@ else
 	echo "==================================================="
 	echo
 	echo
-        npm install iobroker --unsafe-perm && npm i --production --unsafe-perm
-        echo
+	npm install iobroker --unsafe-perm && npm i --production --unsafe-perm
+	echo
 	echo
 	echo "==================================================="
 	echo "Installed IoBroker, startig IoBroker now."
 	echo "==================================================="
 	echo
 	echo
-        #echo "Directory /opt/iobroker/ is empty, extracting config now..."
-        #tar -xkf /root/iobrokerBase.tgz -C /opt/iobroker/
-        #echo "Extracted package $PACKAGE to /opt/iobroker/ to initialize the configuration directory."
+	#echo "Directory /opt/iobroker/ is empty, extracting config now..."
+	#tar -xkf /root/iobrokerBase.tgz -C /opt/iobroker/
+	#echo "Extracted package $PACKAGE to /opt/iobroker/ to initialize the configuration directory."
 fi
 
 #tail -f /dev/null
